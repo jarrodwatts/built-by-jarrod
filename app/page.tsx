@@ -1,65 +1,86 @@
-import Image from "next/image";
+import { ProjectCard } from "@/components/project-card";
+import { SparklesText } from "@/components/ui/sparkles-text";
+
+const projects = [
+  {
+    title: "Myriad Starter Kit",
+    href: "https://github.com/jarrodwatts/myriad-starter-kit",
+    image: "/myriad-starter-kit.png",
+    tags: ["Starter Kit", "Abstract", "SDK"],
+    description:
+      "A starter kit for creating prediction market apps built on Myriad.",
+  },
+  {
+    title: "Trustless Manifesto Feed",
+    href: "https://trustlessmanifesto.com",
+    image: "/trustlessmanifesto.png",
+    tags: ["Web3", "Manifesto", "Philosophy"],
+    description:
+      "A live-feed of wallets signing Ethereum's trustless manifesto.",
+  },
+  {
+    title: "Transaction Simulator",
+    href: "https://txsim.com",
+    image: "/txsim.png",
+    tags: ["Simulator", "Transactions", "Debugging"],
+    description:
+      "A tool to see how long transactions take to confirm on any EVM chain.",
+  },
+  {
+    title: "Axestract",
+    href: "https://axestract.preview.abs.xyz/",
+    image: "/axestract.png",
+    tags: ["Gaming", "Realtime", "Abstract"],
+    description:
+      "A cookie-clicker game where each click is a transaction on Abstract.",
+  },
+  {
+    title: "Blue Balls",
+    href: "https://plinko-lovat.vercel.app/",
+    image: "/blueballs.png",
+    tags: ["Plinko", "Provably Fair", "Game"],
+    description:
+      "A Plinko game where every ball drop is a blockchain transaction on Abstract.",
+  },
+  {
+    title: "build.abs.xyz",
+    href: "https://build.abs.xyz",
+    image: "/build.png",
+    tags: ["Docs", "Resources", "Ecosystem"],
+    description:
+      "A collection of components to help devs build apps on Abstract.",
+  },
+];
 
 export default function Home() {
   return (
-    <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex min-h-screen w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
-        </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
+    <div className="flex flex-col items-center justify-center min-h-screen px-4 py-16">
+      <div className="max-w-5xl mx-auto text-center space-y-8">
+        {/* Headline */}
+        <h1 className="text-black dark:text-white relative mx-auto max-w-[43.5rem] pt-5 md:px-4 md:py-2 text-center font-semibold tracking-tighter text-balance text-5xl sm:text-7xl lg:text-7xl">
+          built by{" "}
+          <SparklesText
+            className="inline text-5xl sm:text-7xl lg:text-7xl font-semibold"
+            sparklesCount={3}
           >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
+            jarrod
+          </SparklesText>
+        </h1>
+
+        {/* Description */}
+        <p className="text-lg text-muted-foreground max-w-xl mx-auto">
+          A collection of templates, demos, and resources i&rsquo;ve created.
+        </p>
+
+        {/* Projects Section */}
+        <div className="pt-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {projects.map((project) => (
+              <ProjectCard key={project.title} {...project} />
+            ))}
+          </div>
         </div>
-      </main>
+      </div>
     </div>
   );
 }
