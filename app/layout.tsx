@@ -18,8 +18,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Jarrod Watts Starter",
-  description: "A starter template with custom design system",
+  title: "Jarrod Watts",
+  description: "showcase of some cool stuff i've built",
 };
 
 export default function RootLayout({
