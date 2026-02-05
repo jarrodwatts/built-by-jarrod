@@ -35,6 +35,14 @@ const projects = [
       "A fully autonomous asset manager on Abstract. Returns may vary.",
   },
   {
+    title: "Onchain Abstract",
+    href: "https://onchain.abs.xyz/",
+    image: "/onchain-abstract.png",
+    tags: ["Abstract", "Analytics", "Profile"],
+    description:
+      "Track your onchain activity, badges, and stats on Abstract.",
+  },
+  {
     title: "Myriad Starter Kit",
     href: "https://github.com/jarrodwatts/myriad-starter-kit",
     image: "/myriad-starter-kit.png",
