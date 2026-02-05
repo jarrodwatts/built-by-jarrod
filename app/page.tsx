@@ -3,6 +3,38 @@ import { SparklesText } from "@/components/ui/sparkles-text";
 
 const projects = [
   {
+    title: "Claude HUD",
+    href: "https://github.com/jarrodwatts/claude-hud",
+    image: "/claude-hud.png",
+    tags: ["Claude Code", "Plugin", "CLI"],
+    description:
+      "A Claude Code plugin that shows context usage, active tools, running agents, and todo progress.",
+  },
+  {
+    title: "Claude Delegator",
+    href: "https://github.com/jarrodwatts/claude-delegator",
+    image: "/claude-delegator.png",
+    tags: ["Claude Code", "Codex", "AI Agents"],
+    description:
+      "Delegate tasks to Codex GPT 5.2 directly from within Claude Code.",
+  },
+  {
+    title: "Claude STT",
+    href: "https://github.com/jarrodwatts/claude-stt",
+    image: "/claude-stt.png",
+    tags: ["Claude Code", "Speech-to-Text", "Accessibility"],
+    description:
+      "Speech-to-text input for Claude Code with live streaming dictation.",
+  },
+  {
+    title: "Blaickrock",
+    href: "https://github.com/jarrodwatts/blaickrock",
+    image: "/blaickrock.png",
+    tags: ["AI Agent", "Abstract", "DeFi"],
+    description:
+      "A fully autonomous asset manager on Abstract. Returns may vary.",
+  },
+  {
     title: "Myriad Starter Kit",
     href: "https://github.com/jarrodwatts/myriad-starter-kit",
     image: "/myriad-starter-kit.png",
