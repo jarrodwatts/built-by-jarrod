@@ -24,7 +24,7 @@ const projects = [
     image: "/claude-delegator.png",
     tags: ["Claude Code", "Codex", "AI Agents"],
     description:
-      "Delegate tasks to Codex GPT 5.2 directly from within Claude Code.",
+      "Delegate tasks to Codex directly from within Claude Code.",
   },
   {
     title: "Claude STT",
