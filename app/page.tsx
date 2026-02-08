@@ -3,6 +3,14 @@ import { SparklesText } from "@/components/ui/sparkles-text";
 
 const projects = [
   {
+    title: "Claude Code Wrapped",
+    href: "https://github.com/jarrodwatts/ccwrapped",
+    image: "/ccwrapped.png",
+    tags: ["Claude Code", "Plugin", "Analytics"],
+    description:
+      "Your sessions, tools, streaks, and coding personality — visualized and shareable.",
+  },
+  {
     title: "Claude HUD",
     href: "https://github.com/jarrodwatts/claude-hud",
     image: "/claude-hud.png",
