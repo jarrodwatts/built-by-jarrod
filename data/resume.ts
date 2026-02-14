@@ -17,12 +17,21 @@ export interface Stat {
   suffix?: string;
 }
 
+export interface Highlight {
+  text: string;
+  tags?: string[];
+}
+
 export interface Experience {
+  id: string;
   role: string;
   company: string;
   companyUrl: string;
   startDate: string;
   endDate: string | null;
+  description: string;
+  highlights: Highlight[];
+  tags: string[];
 }
 
 export interface Project {
@@ -40,6 +49,7 @@ export interface Education {
   startYear: number;
   endYear: number;
   honors?: string;
+  honorsUrl?: string;
 }
 
 export interface ResumeData {
@@ -95,32 +105,142 @@ export const RESUME: ResumeData = {
   ],
   experience: [
     {
+      id: "abstract",
       role: "Director of Developer Relations",
       company: "Abstract",
       companyUrl: "https://abs.xyz",
       startDate: "Aug 2024",
       endDate: null,
+      description:
+        "Leading developer relations for Abstract, an Ethereum L2 focused on bringing crypto to the mainstream.",
+      highlights: [
+        {
+          text: "Built and led a developer relations team from the ground up, scaling the ecosystem from launch to thousands of active developers.",
+        },
+        {
+          text: "Architected and shipped open-source tooling and starter kits that became the primary onboarding path for new developers.",
+          tags: ["TypeScript", "Next.js", "Solidity"],
+        },
+        {
+          text: "Created comprehensive documentation, tutorials, and video content driving significant developer adoption.",
+        },
+        {
+          text: "Developed Blaickrock, an open-source autonomous AI agent for on-chain asset management, showcasing Abstract's capabilities.",
+          tags: ["AI Agents", "DeFi", "Abstract"],
+        },
+        {
+          text: "Represented Abstract at conferences, hackathons, and community events globally.",
+        },
+      ],
+      tags: [
+        "TypeScript",
+        "React",
+        "Next.js",
+        "Solidity",
+        "AI Agents",
+        "Technical Writing",
+      ],
     },
     {
+      id: "polygon",
       role: "Senior Developer Relations Engineer",
       company: "Polygon Labs",
       companyUrl: "https://polygon.technology",
       startDate: "Jun 2023",
       endDate: "Aug 2024",
+      description:
+        "Senior DevRel at Polygon Labs, working across the Polygon ecosystem including PoS, zkEVM, and CDK.",
+      highlights: [
+        {
+          text: "Owned developer education across the Polygon ecosystem, creating guides and reference implementations for PoS, zkEVM, and Polygon CDK.",
+          tags: ["Solidity", "zkEVM", "CDK"],
+        },
+        {
+          text: "Built and maintained open-source example applications and starter templates used by thousands of developers monthly.",
+          tags: ["TypeScript", "Next.js", "Hardhat"],
+        },
+        {
+          text: "Produced technical video content and tutorials that grew the YouTube developer audience significantly.",
+        },
+        {
+          text: "Provided developer feedback to protocol engineering teams, influencing product direction based on community pain points.",
+        },
+        {
+          text: "Spoke at ETHGlobal, Devconnect, and other major ecosystem events.",
+        },
+      ],
+      tags: [
+        "Solidity",
+        "TypeScript",
+        "React",
+        "zkEVM",
+        "Polygon CDK",
+        "Hardhat",
+      ],
     },
     {
+      id: "thirdweb",
       role: "Developer Relations Engineer",
       company: "thirdweb",
       companyUrl: "https://thirdweb.com",
       startDate: "Apr 2022",
       endDate: "Jun 2023",
+      description:
+        "DevRel at thirdweb, building tools and content to make web3 development accessible.",
+      highlights: [
+        {
+          text: "Created 50+ technical tutorials and guides that became core onboarding resources for the platform.",
+        },
+        {
+          text: "Built open-source example projects and templates demonstrating thirdweb SDK integration patterns.",
+          tags: ["TypeScript", "React", "Next.js", "thirdweb SDK"],
+        },
+        {
+          text: "Grew the thirdweb YouTube channel with in-depth technical walkthroughs, reaching hundreds of thousands of views.",
+        },
+        {
+          text: "Engaged directly with the developer community through Discord, Twitter, and GitHub to resolve technical issues and gather feedback.",
+        },
+        {
+          text: "Contributed to SDK development and documentation improvements based on developer community feedback.",
+          tags: ["TypeScript", "Solidity"],
+        },
+      ],
+      tags: [
+        "TypeScript",
+        "React",
+        "Next.js",
+        "Solidity",
+        "thirdweb SDK",
+        "Technical Writing",
+      ],
     },
     {
+      id: "quantium",
       role: "Software Engineer",
       company: "Quantium",
       companyUrl: "https://quantium.com",
       startDate: "Feb 2020",
       endDate: "Apr 2022",
+      description:
+        "Software engineer at Quantium, one of the world's largest data analytics firms, working on enterprise data products.",
+      highlights: [
+        {
+          text: "Developed and maintained full-stack features for Q.Checkout, a real-time retail analytics platform processing millions of transactions.",
+          tags: ["C#", ".NET", "React", "SQL Server"],
+        },
+        {
+          text: "Built data visualization dashboards and reporting tools used by major Australian retailers for strategic decision-making.",
+        },
+        {
+          text: "Collaborated with data science teams to integrate machine learning models into production applications.",
+          tags: ["Python", "Azure"],
+        },
+        {
+          text: "Participated in the Co-operative Scholarship program, gaining 18 months of industry experience during university.",
+        },
+      ],
+      tags: ["C#", ".NET", "React", "SQL Server", "Python", "Azure"],
     },
   ],
   projects: [
@@ -194,6 +314,8 @@ export const RESUME: ResumeData = {
       startYear: 2017,
       endYear: 2020,
       honors: "Co-operative Scholarship",
+      honorsUrl:
+        "https://www.uts.edu.au/courses/bachelor-of-information-technology-co-op",
     },
   ],
 };
