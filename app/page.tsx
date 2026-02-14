@@ -44,17 +44,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Stack */}
-      <section className="border-b border-neutral-800 px-6 py-20">
-        <SectionLabel>Stack</SectionLabel>
-        <p className="font-mono text-base text-neutral-400">
-          {RESUME.stack.join(" / ")}
-        </p>
-        <p className="mt-4 font-mono text-sm text-neutral-600">
-          {RESUME.focusAreas.join(" / ")}
-        </p>
-      </section>
-
       {/* Education */}
       <section className="border-b border-neutral-800 px-6 py-20">
         <SectionLabel>Education</SectionLabel>
@@ -65,9 +54,19 @@ export default function Home() {
           >
             <div>
               <span className="font-semibold text-white">{edu.degree}</span>
-              {edu.honors && (
-                <span className="ml-3 text-neutral-500">{edu.honors}</span>
-              )}
+              {edu.honors &&
+                (edu.honorsUrl ? (
+                  <a
+                    href={edu.honorsUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="ml-3 text-neutral-500 hover:text-white hover:underline"
+                  >
+                    {edu.honors}
+                  </a>
+                ) : (
+                  <span className="ml-3 text-neutral-500">{edu.honors}</span>
+                ))}
             </div>
             <div className="flex items-baseline gap-3">
               <a
