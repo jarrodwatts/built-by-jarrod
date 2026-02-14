@@ -1,12 +1,12 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import { ThemeProvider } from "@/components/theme-provider";
-import { AuroraBackground } from "@/components/ui/aurora-background";
 import { Header } from "@/components/header";
+import { GridBackground } from "@/components/grid-background";
 import "./globals.css";
 
 const geistSans = Geist({
-  variable: "--font-geist",
+  variable: "--font-geist-sans",
   subsets: ["latin"],
   display: "swap",
 });
@@ -19,7 +19,8 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: "Jarrod Watts",
-  description: "showcase of some cool stuff i've built",
+  description:
+    "Developer Relations, AI Agents, and Open Source. Based in Sydney, Australia.",
 };
 
 export default function RootLayout({
@@ -38,10 +39,10 @@ export default function RootLayout({
           enableSystem={false}
           disableTransitionOnChange
         >
-          <AuroraBackground />
-          <div className="relative flex min-h-screen flex-col">
+          <GridBackground />
+          <div className="relative z-10 mx-auto min-h-screen max-w-4xl border-x border-neutral-800 bg-black">
             <Header />
-            <main className="flex-1">{children}</main>
+            <main>{children}</main>
           </div>
         </ThemeProvider>
       </body>
